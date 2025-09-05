@@ -1,22 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>document</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-</head>
+    <link rel="stylesheet" href="stylesheets/tyle.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="w-full min-h-screen bg-zinc-800 p-10">
+      <nav>
+        <a href="/read" class="text-blue-500">Read Users</a>
+      </nav>
+      <br />
 
-<body>
-    <div class="main-w-full min-h-screen bg-zinc-900 p-10">
-        <a class="text-blue-500 mb-10 " href="/">Go back to home</a>
-        <form action="/edit" method="post">
-            <input class="block mt-5 rounded bg-zinc-800 mb-5 w-full py-2 text-white" type="text" placeholder="Previous Name" name="previous"  value="<%= filename%>" />
-            <input class="block rounded bg-zinc-800 mb-5 w-full py-2 text-white" type="text" placeholder="New Name" name="new" />
-            <input type="submit" value="update name" class="bg-yellow-400 rounded mt-5 py-2 px-5" />
-        </form>
+      <h1 class="text-3xl text-white">Update User</h1>
+      <br />
+      <form action="/update/<%= user._id%>" method="post">
+        <input
+          type="text"
+          class="text-white rounded py-1 outline-none border-2 border-zinc-500 bg-transparent"
+          name="name"
+          placeholder="Name"
+          value="<%= user.name%>"
+        />
+        <input
+          type="text"
+          class="text-white rounded py-1 outline-none border-2 border-zinc-500 bg-transparent"
+          name="email"
+          placeholder="Email"
+          value="<%= user.email%>"
+        />
+        <input
+          type="text"
+          class="text-white rounded py-1 outline-none border-2 border-zinc-500 bg-transparent"
+          name="image"
+          placeholder="Image url"
+          value="<%= user.image%>"
+        />
+        <input
+          type="submit"
+          value="Update user"
+          class="rounded-lg ml-4 w-40 h-10 bg-yellow-500 cursor-pointer"
+        />
+      </form>
     </div>
-</body>
-
+  </body>
 </html>

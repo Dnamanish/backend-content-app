@@ -1,17 +1,2 @@
-# Node modules (always ignore)
 node_modules/
-
-# Logs
-*.log
-
-# Data files you generate at runtime
-data/          # if you store your content in a folder called "data"
-*.json         # if you save content in JSON files
-*.txt          # if you save content in text files
-
-# Environment variables (if any)
 .env
-
-# OS-specific files
-.DS_Store      # macOS
-Thumbs.db      # Windows
